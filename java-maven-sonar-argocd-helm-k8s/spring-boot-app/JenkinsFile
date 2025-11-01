@@ -51,6 +51,7 @@ pipeline {
             GIT_USER_NAME = "suresh77211"
         }
         steps {
+            dir('java-maven-sonar-argocd-helm-k8s')
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "suresh.edureka@gmail.com"
