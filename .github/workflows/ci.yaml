@@ -23,7 +23,7 @@ jobs:
             - name: Build with Maven
               
               run: |
-                cd java-maven-sonar-argocd-helm-k8s/spring-boot
+                cd java-maven-sonar-argocd-helm-k8s/java-maven-sonar-argocd-helm-k8s
                 mvn clean package
 
             - name: Static Code Analysis
