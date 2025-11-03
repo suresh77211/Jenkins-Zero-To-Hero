@@ -51,8 +51,8 @@ jobs:
                 git config user.name "suresh77211"
                 git config user.email  "suresh.edureka@gmail.com"
                 BUILD_NUMBER=${{ github.run_number }}
-                cd java-maven-sonar-argocd-helm-k8s/helm-charts
-                sed -i "s/replaceImagetag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yaml
-                git add "java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yaml"
+                cd java-maven-sonar-argocd-helm-k8s/
+                sed -i "s/replaceImagetag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yaml
+                git add "spring-boot-app-manifests/deployment.yaml"
                 git commit -m "Update deployment file ${BUILD_NUMBER}"
                 git push https://x-access-token//${GIT_TOKEN}@git:${GIT_USERNAME}/${GITREPO_NAME}.git HEAD:main
