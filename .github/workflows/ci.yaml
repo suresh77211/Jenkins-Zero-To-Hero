@@ -53,6 +53,6 @@ jobs:
                 BUILD_NUMBER=${{ github.run_number }}
                 cd java-maven-sonar-argocd-helm-k8s/
                 sed -i "s/replaceImagetag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
-                git add "spring-boot-app-manifests/deployment.yaml"
+                git add "spring-boot-app-manifests/deployment.yml"
                 git commit -m "Update deployment file ${BUILD_NUMBER}"
                 git push https://x-access-token//${GITHUB_TOKEN}@git:${GITHUB_USERNAME}/${GITHUB_REPO_NAME}.git HEAD:main
